@@ -1,48 +1,28 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Aref Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{
-  background:#0f172a;
-  color:white;
-}
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins', sans-serif;
 }
-.contact a {
-  pointer-events: auto;
-} 
 
-
-/* CONTACT */
-.contact a{
-  display:block;
-  margin:10px;
-  color:#38bdf8;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#94a3b8;
-}
 body{
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background:#0f172a;
   color:white;
+  scroll-behavior:smooth;
 }
 
-/* NAV جديد */
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
@@ -55,7 +35,18 @@ nav{
   z-index:1000;
 }
 
-/* HERO شكل جديد */
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+/* HERO */
 .hero{
   height:90vh;
   display:flex;
@@ -65,48 +56,114 @@ nav{
   text-align:center;
 }
 
-/* SECTIONS شكل كروت */
+.hero img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:3px solid #38bdf8;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:34px;
+}
+
+.hero p{
+  color:#94a3b8;
+  margin-top:5px;
+}
+
+.btn{
+  margin-top:15px;
+  padding:10px 20px;
+  background:#38bdf8;
+  color:black;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* SECTIONS */
 section{
-  max-width:800px;
+  max-width:850px;
   margin:40px auto;
   padding:30px;
   background:#111827;
   border-radius:16px;
   box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.6s;
 }
 
-/* CARDS أجمل */
+/* SKILLS + PROJECTS */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
+}
+
 .card{
   background:#1e293b;
-  padding:20px;
+  padding:15px;
   border-radius:12px;
+  width:200px;
+  text-align:center;
   transition:0.3s;
 }
 
 .card:hover{
   transform:translateY(-5px);
+  background:#243447;
 }
-/* CV BOX */
-#cv div{
-  background:#111827;
+
+/* CONTACT */
+.contact a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:10px 0;
+  color:#38bdf8;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* SOCIAL ICONS */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:15px;
+}
+
+.social a{
+  width:45px;
+  height:45px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  background:#1e293b;
+  color:white;
+  transition:0.3s;
+}
+
+.social a:hover{
+  transform:scale(1.2);
+}
+
+footer{
+  text-align:center;
   padding:20px;
-  border-radius:12px;
-  display:inline-block;
-  text-align:left;
-}
-
-/* DARK MODE */
-body.light{
-  background:#f1f5f9;
-  color:#0f172a;
-}
-
-body.light nav{
-  background:#e2e8f0;
-}
-
-body.light nav a{
-  color:#0f172a;
+  color:#94a3b8;
 }
 </style>
 </head>
@@ -125,50 +182,27 @@ body.light nav a{
   </div>
 </nav>
 
-<!-- DARK MODE BUTTON -->
-<button onclick="toggleMode()" style="
-  position:fixed;
-  top:15px;
-  right:15px;
-  padding:10px 12px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  z-index:999;
-">
-🌙
-</button>
-
 <!-- HERO -->
 <div class="hero">
   <img src="me.jpg">
   <h1>Ahmed Aref</h1>
   <p>Software Engineering Student</p>
 
-  <a href="https://wa.me/201030500912" class="btn">WhatsApp Me</a>
+  <a href="https://wa.me/201030500912" class="btn">Hire Me</a>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
   <h2>👤 About Me</h2>
-  <p>I am a software engineering student passionate about building modern websites.</p>
+  <p>I am a software engineering student passionate about building modern websites and learning new technologies.</p>
 </section>
 
 <!-- CV -->
 <section id="cv">
   <h2>📄 CV</h2>
-
-  <div>
-    <h3>Ahmed Aref</h3>
-    <p>Email: a.aref321.a.mohamed@gmail.com</p>
-    <p>Phone: 01030500912</p>
-
-    <h4>Skills</h4>
-    <p>HTML • CSS • JavaScript</p>
-
-    <h4>Education</h4>
-    <p>University of Aqaba - Software Engineering</p>
-  </div>
+  <p><b>Name:</b> Ahmed Aref</p>
+  <p><b>Email:</b> a.aref321.a.mohamed@gmail.com</p>
+  <p><b>Phone:</b> 01030500912</p>
 </section>
 
 <!-- SKILLS -->
@@ -192,40 +226,36 @@ body.light nav a{
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact">
   <h2>📞 Contact Me</h2>
 
-  <a href="mailto:a.aref321.a.mohamed@gmail.com">
-    <i class="fa-solid fa-envelope"></i> Email
-  </a>
+  <div class="contact">
+    <a href="mailto:a.aref321.a.mohamed@gmail.com">
+      <i class="fa-solid fa-envelope"></i> Email
+    </a>
 
-  <a href="https://wa.me/201030500912">
-    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-  </a>
+    <a href="https://wa.me/201030500912">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
-  <a href="https://www.facebook.com/share/18dRatwHLT/" target="_blank">
-    <i class="fa-brands fa-facebook"></i> Facebook
-  </a>
+  <div class="social">
+    <a href="https://www.facebook.com/share/18dRatwHLT/" target="_blank">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
 
-  <a href="https://www.instagram.com/ahmed.aref_mohamed?igsh=MTllcGp3dnF4bXV2MA==" target="_blank">
-    <i class="fa-brands fa-instagram"></i> Instagram
-  </a>
+    <a href="https://www.instagram.com/ahmed.aref_mohamed?igsh=MTllcGp3dnF4bXV2MA==" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   © 2026 Ahmed Aref
 </footer>
 
-<!-- ANIMATION + DARK MODE -->
 <script>
 const sections = document.querySelectorAll("section");
-
-sections.forEach(sec=>{
-  sec.style.opacity = 0;
-  sec.style.transform = "translateY(30px)";
-  sec.style.transition = "0.6s";
-});
 
 window.addEventListener("scroll", ()=>{
   sections.forEach(sec=>{
@@ -236,10 +266,6 @@ window.addEventListener("scroll", ()=>{
     }
   });
 });
-
-function toggleMode(){
-  document.body.classList.toggle("light");
-}
 </script>
 
 </body>
