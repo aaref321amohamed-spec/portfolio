@@ -20,6 +20,7 @@ body{
   color:white;
 }
 
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
@@ -37,6 +38,7 @@ nav a{
   margin-left:15px;
 }
 
+/* HERO */
 .hero{
   text-align:center;
   padding:60px 20px;
@@ -68,11 +70,13 @@ nav a{
   font-weight:bold;
 }
 
+/* SECTIONS */
 section{
   padding:60px 20px;
   text-align:center;
 }
 
+/* CARDS */
 .cards{
   display:flex;
   flex-wrap:wrap;
@@ -91,34 +95,77 @@ section{
 
 .card:hover{
   transform:scale(1.05);
+  box-shadow:0 0 15px rgba(56,189,248,0.3);
 }
 
+/* CONTACT */
 .contact a{
   display:block;
   margin:10px;
   color:#38bdf8;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
   color:#94a3b8;
+}
+
+/* CV BOX */
+#cv div{
+  background:#111827;
+  padding:20px;
+  border-radius:12px;
+  display:inline-block;
+  text-align:left;
+}
+
+/* DARK MODE */
+body.light{
+  background:#f1f5f9;
+  color:#0f172a;
+}
+
+body.light nav{
+  background:#e2e8f0;
+}
+
+body.light nav a{
+  color:#0f172a;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <h2>Ahmed</h2>
   <div>
     <a href="#about">About</a>
+    <a href="#cv">CV</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
+<!-- DARK MODE BUTTON -->
+<button onclick="toggleMode()" style="
+  position:fixed;
+  top:15px;
+  right:15px;
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  z-index:999;
+">
+🌙
+</button>
+
+<!-- HERO -->
 <div class="hero">
   <img src="me.jpg">
   <h1>Ahmed Aref</h1>
@@ -127,30 +174,30 @@ footer{
   <a href="https://wa.me/201030500912" class="btn">WhatsApp Me</a>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>👤 About Me</h2>
-  <p>I am a software engineering student passionate about building modern websites and learning new technologies.</p>
+  <p>I am a software engineering student passionate about building modern websites.</p>
 </section>
-  
+
+<!-- CV -->
 <section id="cv">
   <h2>📄 CV</h2>
 
-  <div style="background:#111827; padding:20px; border-radius:12px;">
+  <div>
     <h3>Ahmed Aref</h3>
     <p>Email: a.aref321.a.mohamed@gmail.com</p>
     <p>Phone: 01030500912</p>
 
     <h4>Skills</h4>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <p>HTML • CSS • JavaScript</p>
 
     <h4>Education</h4>
     <p>University of Aqaba - Software Engineering</p>
   </div>
 </section>
+
+<!-- SKILLS -->
 <section id="skills">
   <h2>💻 Skills</h2>
   <div class="cards">
@@ -161,25 +208,29 @@ footer{
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <h2>📂 Projects</h2>
   <div class="cards">
     <div class="card">Portfolio Website</div>
-    <div class="card">Coming Soon...</div>
+    <div class="card">Mini App</div>
   </div>
 </section>
+
+<!-- CONTACT -->
 <section id="contact" class="contact">
   <h2>📞 Contact Me</h2>
 
   <a href="mailto:a.aref321.a.mohamed@gmail.com">Email</a>
-
   <a href="https://wa.me/201030500912">WhatsApp</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
   © 2026 Ahmed Aref
 </footer>
 
+<!-- ANIMATION + DARK MODE -->
 <script>
 const sections = document.querySelectorAll("section");
 
@@ -198,8 +249,11 @@ window.addEventListener("scroll", ()=>{
     }
   });
 });
+
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
 </script>
 
 </body>
 </html>
-<
